@@ -10,7 +10,7 @@ import java.util.Stack;
 /**
  * Execute the script from file
  * **/
-public class ExecuteScriptCommand extends AbstractCommand{//TODO беда
+public class ExecuteScriptCommand extends AbstractCommand{
     private Stack<String> scriptStack = new Stack<>();
 
     public ExecuteScriptCommand(){

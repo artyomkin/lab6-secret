@@ -40,7 +40,7 @@ public class ReplaceIfLowerCommand extends AbstractCommand{
                 return new Response("Ticket with such key doesn't exist",true);
             }
             newTicket.setId(this.key);
-            if (newTicket.compareTo(oldTicket)<0) {
+            if (newTicket.compareTo(oldTicket)< 0) {
                 collectionManager.update(key, newTicket);
             }
             this.key = 0;

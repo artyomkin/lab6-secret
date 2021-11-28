@@ -28,7 +28,12 @@ public class RemoveGreaterCommand extends AbstractCommand{
         if(collectionManager.getSize() == 0) {
             return new Response("Collection is empty",true);
         }
-        Ticket ticket = new Gson().fromJson(arg,Ticket.class);
+        Ticket ticket;
+        try{
+            ticket = new Gson().fromJson(arg,Ticket.class);
+        } catch (JsonSyntaxException e){
+            return new Response("Unknown argument", true);
+        }
         if (ticket == null){
             return new Response("",false, Instruction.ASK_TICKET, new Command("remove_greater",""));
         }
